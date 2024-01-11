@@ -31,22 +31,17 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            clicked = True
-        if event.type == pygame.MOUSEBUTTONUP:
-            clicked = False
-
+    
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
         theta3+=0.0025
     if keys[pygame.K_RIGHT]:
         theta3-=0.0025
     
-    if clicked:
-        mouse_pos = pygame.mouse.get_pos()
+    mouse_pos = pygame.mouse.get_pos()
 
-        p3[0] = (mouse_pos[0] - 400)/scale
-        p3[1] = (mouse_pos[1] - 250)/scale*-1
+    p3[0] = (mouse_pos[0] - 400)/scale
+    p3[1] = (mouse_pos[1] - 250)/scale*-1
 
     p2[0] = p3[0] - (l3*np.cos(theta3))
     p2[1] = p3[1] - (l3*np.sin(theta3))
