@@ -31,7 +31,8 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-    
+
+    # ROTATE TARGET ANGLE WITH ARROW KEYS
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
         theta3+=0.0025
